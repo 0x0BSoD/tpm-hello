@@ -14,3 +14,8 @@ set_tmux_option() {
 	local value="$2"
 	tmux set-option -gq "$option" "$value"
 }
+
+command_exists() {
+        local command="$1"
+        type "$command" >/dev/null 2>&1
+}
